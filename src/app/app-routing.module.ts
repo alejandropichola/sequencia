@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { SequenceComponent } from '@components/sequence/sequence.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/sequence',
+    pathMatch: 'full'
+  },
+  {
+    path: 'sequence', component: SequenceComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
