@@ -1,9 +1,12 @@
 <section class="sequence-container">
   <h1 class="sequence-container__title">Completa sequencia</h1>
   <div class="sequence-container__cards">
-    <app-card [title]="1"></app-card>
-    <app-card [title]="1"></app-card>
-    <app-card [title]="1"></app-card>
+    <app-card
+      *ngFor="let item of range; let index = index; let last = last"
+      [valuate]="index === sequenceValuate"
+      [title]="item"
+      [hiddenArrow]="last"
+    ></app-card>
   </div>
   <button class="sequence-container__button">Responder</button>
 </section>

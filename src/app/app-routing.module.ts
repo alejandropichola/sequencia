@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SequenceComponent } from '@components/sequence/sequence.component';
+import { PageSequenceComponent } from '@components/page-sequence/page-sequence.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'sequence', component: SequenceComponent
+    path: 'sequence', component: PageSequenceComponent
   }
 ];
 

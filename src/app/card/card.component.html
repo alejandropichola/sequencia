@@ -1,3 +1,17 @@
-<div class="card-container">
-  <h1>{{ title }}</h1>
+<div class="card">
+  <div class="card__container" *ngIf="!valuate">
+    <h1 class="card__title">{{ title }}</h1>
+    <img [hidden]="hiddenArrow" class="card__arrow" src="/assets/image/arrow.svg" >
+  </div>
+  <div *ngIf="valuate" class="card__container-valuate">
+    <div class="card__title-container">
+      <h1 class="card__title">{{ selectedOption }}</h1>
+    </div>
+    <img [hidden]="hiddenArrow" class="card__arrow" src="/assets/image/arrow.svg" >
+    <div class="card__options">
+      <div *ngFor="let item of options; let index=index">
+        <h1 (click)="handlerOption(index === optionSuccess ? title : item)">{{ index === optionSuccess ? title : item }}</h1>
+      </div>
+    </div>
+  </div>
 </div>
