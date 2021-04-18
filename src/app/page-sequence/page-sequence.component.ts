@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-page-sequence',
@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./page-sequence.component.scss']
 })
 export class PageSequenceComponent implements OnInit {
-  range: Array<number> = Array.from({length: 5}, () => Math.floor(Math.random() * 10))
+  range: Array<number> = Array.from({length: 2}, () => Math.floor(Math.random() * 10))
 
   constructor() { }
 
