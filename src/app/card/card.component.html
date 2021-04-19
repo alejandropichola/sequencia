@@ -8,15 +8,29 @@
     />
   </div>
   <div *ngIf="valuate" class="card__container-valuate">
-    <div class="card__title-container">
-      <h1 class="card__title">{{ selectedOption }}</h1>
+    <div
+      class="card__title-container"
+      [ngClass]="{
+        'card__title-container--success': statusResponse === 1,
+        'card__title-container--error': statusResponse === 2
+      }"
+    >
+      <h1 class="card__title">
+        {{ selectedOption }}
+      </h1>
     </div>
     <img
       [hidden]="hiddenArrow"
       class="card__arrow"
       src="/assets/image/arrow.svg"
     />
-    <div class="card__options">
+    <img
+      *ngIf="statusResponse === 1"
+      class="card__success"
+      src="/assets/image/success.svg"
+    />
+    <label *ngIf="statusResponse === 2" class="card__error">La respuesta correcta es {{ title }}</label>
+    <div class="card__options" *ngIf="showOptions">
       <div *ngFor="let item of options; let index = index">
         <h1 (click)="handlerOption(index === optionSuccess ? title : item)">
           {{ index === optionSuccess ? title : item }}

@@ -1,3 +1,8 @@
 <div>
-  <app-sequence *ngFor="let item of range" [value]="item" [limit]="5"></app-sequence>
+  <app-sequence
+    [timer]="1000"
+    [limitRange]="5"
+    [numberSequence]="10"
+    [numberOptionSequence]="5"
+  ></app-sequence>
 </div>

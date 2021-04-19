@@ -6,27 +6,43 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./sequence.component.scss']
 })
 export class SequenceComponent implements OnInit {
-  @Input() value!: number;
-  @Input() limit!: number;
-  sequence: number = Math.floor(Math.random() * 5);
-  sequenceValuate: number = 0;
+  @Input() limitRange: number = 0;
+  @Input() timer!:number;
+  @Input() numberSequence: number = 0;
+  @Input() numberOptionSequence: number = 0;
+
+  initRange: number = 0;
   range: Array<number> = [];
+  total: Array<boolean> = [];
 
   constructor() { }
-
-  generateRange(): void {
-    let value = this.value;
-    this.sequenceValuate = Math.floor(Math.random() * (this.limit - 1));
-    for (let i=0; i < this.limit; i++) {
-      value += this.sequence;
-      this.range.push(value);
-    }
-  }
 
   ngOnInit(): void {
   }
 
   ngAfterContentInit(): void {
-    this.generateRange();    
+    this.generateRangeSequence();
+  }
+
+  nextOption():void {
+    if (this.initRange < (this.limitRange)) {
+      this.initRange++;
+    }
+  }
+
+  setResponse(value: boolean):void {
+    this.total.push(value);
+  }
+
+  generateRangeSequence(): void {
+    this.range = Array.from(
+      { length: this.limitRange },
+      () => Math.floor(Math.random() * this.numberSequence)
+    );
+  }
+
+  resetSequence(e: boolean):void {
+    this.generateRangeSequence();
+    this.initRange = 0;
   }
 }

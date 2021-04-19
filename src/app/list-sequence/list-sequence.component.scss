@@ -1,0 +1,62 @@
+* {
+  font-family: Montserrat;
+}
+.sequence-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &__loading {
+    height: 20px;
+    width: 100%;
+    background: linear-gradient(90deg, #FF8001 0%, #FFCC0D 100%);
+    border-radius: 0px 100px 100px 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__title, &__button {
+    margin: 3rem 0;
+  }
+
+  &__button {
+    background-color: #495259;
+    font-size: 16px;
+    color: #FFF;
+    border: none;
+    padding: 1rem;
+    transition: ease-in-out transform 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
+
+  &__cards {
+    display: flex;
+  }
+}
+
+@media (max-width: 720px) {
+  .sequence-container {
+    &__cards {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

@@ -2,6 +2,7 @@
   &__container, &__container-valuate {
     height: 100px;
     width: 100px;
+    position: relative;
     display: flex;
     align-items: center;
   }
@@ -14,6 +15,16 @@
     justify-content: center;
     border: 1px dashed #A4A4A4;
     border-radius: 20px;
+
+    &--success {
+      border: 1px solid rgba(0, 234, 194, 0.3);
+      box-shadow: 0px 30px 30px rgba(0, 234, 194, 0.3);
+    }
+
+    &--error {
+      border: 1px solid rgba(255, 124, 128, 0.3);
+      box-shadow: 0px 28.6166px 28.6166px rgba(255, 124, 128, 0.3);
+    }
   }
 
   &__container-valuate {
@@ -30,6 +41,21 @@
     width: 50px;
   }
 
+  &__success {
+    width: 30px;
+    position: absolute;
+    bottom: -30px;
+    left: 10px;
+  }
+
+  &__error {
+    color: #B60006;
+    text-align: center;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+  }
+
   &__options {
     height: 40px;
     position: absolute;
@@ -41,6 +67,7 @@
     bottom: -35px;
     box-shadow: 0px 9.7335px 9.7335px #B4D8F4;
     border-radius: 9.7335px;
+    z-index: 2;
 
     h1 {
       margin: 5px;

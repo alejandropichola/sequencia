@@ -1,0 +1,33 @@
+.result-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    color: #000;
+    font-weight: bold;
+    font-size: 96px;
+  }
+
+  &__subtitle {
+    color: #6A7680;
+    font-size: 30px;
+  }
+
+  &__button {
+    background: #ED2A2F;
+    color: #FFF;
+    font-size: 24px;
+    border-radius: 20px;
+    border: none;
+    padding: 20px 30px;
+    transition: ease-in-out 0.3s transform;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

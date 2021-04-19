@@ -1,0 +1,15 @@
+<section class="sequence-container">
+  <div class="sequence-container__loading" [ngStyle]="loadingStyles(timer)"></div>
+  <h1 class="sequence-container__title">Completa sequencia</h1>
+  <div class="sequence-container__cards">
+    <app-card
+      *ngFor="let item of range; let index = index; let last = last"
+      [valuate]="index === sequenceValuate"
+      [title]="item"
+      [hiddenArrow]="last"
+      (setValue)="responseCard($event)"
+      [status]="statusSequence"
+    ></app-card>
+  </div>
+  <button class="sequence-container__button" (click)="nextOption()">Responder</button>
+</section>
